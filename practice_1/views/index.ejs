@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Chinese foods</title>
+  </head>
+  <body>
+    <h1 class="main_heder">Famous and Delicious Chinese Dishes</h1>
+    <div class="dishes_grid">
+      <% chineseDishes.forEach(dish => { %>
+      <a href="detail/<%= dish.id %>">
+        <div class="dish_item" title="click to view detail" id="<%= dish.id %>">
+          <div class="dish_image">
+            <img src="<%= dish.image %>" alt="<%= dish.name %>" />
+          </div>
+          <h2 class="dish_name"><%= dish.name %></h2>
+          <p class="dish_des"><%= dish.description %></p>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+  </body>
+</html>

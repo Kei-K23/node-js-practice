@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Detail for <%= detailDish[0].name %></title>
+  </head>
+  <body>
+    <div class="detail_dish_item" id="<%= detailDish[0].id %>">
+      <h2 class="detail_dish_name"><%= detailDish[0].name %></h2>
+      <div class="detail_dish_image">
+        <img src="<%= detailDish[0].image %>" alt="<%= detailDish[0].name %>" />
+      </div>
+      <p class="detail_dish_des"><%= detailDish[0].description %></p>
+      <ul class="detail_dish_ingredients">
+        <% detailDish[0].ingredients.forEach(ingredient => { %>
+        <li class="ingredient">
+          <span> <%= ingredient.name %></span>
+          <span>/</span>
+          <span><%= ingredient.quantity %></span>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+    <a class="backToMainPage" href="/">Back to main page</a>
+  </body>
+</html>
